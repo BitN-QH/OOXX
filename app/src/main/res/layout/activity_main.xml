@@ -150,7 +150,7 @@
                 android:textStyle="bold" />
         </LinearLayout>
 
-        <com.example.ooxx.TicTacLogicView
+        <com.qianh.ooxx.TicTacLogicView
             android:id="@+id/puzzleView"
             android:layout_width="match_parent"
             android:layout_height="0dp"

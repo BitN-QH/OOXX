@@ -51,7 +51,7 @@
 
 ```
 OOXX/
-├── app/src/main/java/com/example/ooxx/
+├── app/src/main/java/com/qianh/ooxx/
 │   ├── MainActivity.java          # 主游戏界面
 │   ├── DifficultyActivity.java    # 难度选择
 │   ├── TicTacLogicView.java       # 棋盘自定义 View

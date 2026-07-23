@@ -1,4 +1,4 @@
-package com.example.ooxx;
+package com.qianh.ooxx;
 
 import android.content.Intent;
 import android.content.res.Configuration;
