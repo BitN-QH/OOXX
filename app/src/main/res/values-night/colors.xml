@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="page_bg">#FF0F172A</color>
+    <color name="surface_panel">#FF1E293B</color>
+    <color name="surface_panel_2">#FF334155</color>
+    <color name="ink">#FFF1F5F9</color>
+    <color name="text_dim">#FF94A3B8</color>
+    <color name="border">#FF334155</color>
+    <color name="teal">#FF2DD4BF</color>
+    <color name="teal_dark">#FF14B8A6</color>
+    <color name="x_blue">#FF60A5FA</color>
+    <color name="o_coral">#FFFB7185</color>
+    <color name="player_accent">#FF2DD4BF</color>
+    <color name="text_light">#FFF1F5F9</color>
+    <color name="btn_normal">#FF334155</color>
+    <color name="btn_start">#FF2DD4BF</color>
+    <color name="btn_buy">#FFFB7185</color>
+    <color name="check_btn_bg">#FF334155</color>
+</resources>
