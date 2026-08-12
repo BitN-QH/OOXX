@@ -1,0 +1,216 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "OOXX - 圈叉逻辑谜题，一款纯逻辑推理游戏"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "OOXX 圈叉逻辑谜题"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "OOXX"
+    },
+    {
+      "name": "app_name",
+      "value": "OOXX"
+    },
+    {
+      "name": "tagline",
+      "value": "纯逻辑 · 圈叉谜题"
+    },
+    {
+      "name": "score_balance_label",
+      "value": "可用积分"
+    },
+    {
+      "name": "choose_difficulty_title",
+      "value": "选择游戏难度"
+    },
+    {
+      "name": "difficulty_subtitle",
+      "value": "选择适合你的棋盘尺寸，每次都会生成不同题目"
+    },
+    {
+      "name": "difficulty_easy",
+      "value": "简单　6×6"
+    },
+    {
+      "name": "difficulty_medium",
+      "value": "中等　8×8"
+    },
+    {
+      "name": "difficulty_hard",
+      "value": "困难　10×10"
+    },
+    {
+      "name": "difficulty_easy_desc",
+      "value": "轻量棋盘 · 快速入门"
+    },
+    {
+      "name": "difficulty_medium_desc",
+      "value": "更多组合 · 进阶推理"
+    },
+    {
+      "name": "difficulty_hard_desc",
+      "value": "大型棋盘 · 深度挑战"
+    },
+    {
+      "name": "reward_easy",
+      "value": "+2 分"
+    },
+    {
+      "name": "reward_medium",
+      "value": "+5 分"
+    },
+    {
+      "name": "reward_hard",
+      "value": "+7 分"
+    },
+    {
+      "name": "score_rules",
+      "value": "完成题目即可获得积分 · 难度越高积分越多"
+    },
+    {
+      "name": "btn_rules",
+      "value": "规则"
+    },
+    {
+      "name": "btn_hint",
+      "value": "提示(2积分)"
+    },
+    {
+      "name": "btn_check",
+      "value": "检查(1积分)"
+    },
+    {
+      "name": "btn_reset",
+      "value": "重置"
+    },
+    {
+      "name": "btn_restart",
+      "value": "换一题(1积分)"
+    },
+    {
+      "name": "btn_exit_home",
+      "value": "首页"
+    },
+    {
+      "name": "tap_legend",
+      "value": "点按切换"
+    },
+    {
+      "name": "status_playing",
+      "value": "解题中"
+    },
+    {
+      "name": "status_done",
+      "value": "已完成"
+    },
+    {
+      "name": "rules_title",
+      "value": "游戏规则"
+    },
+    {
+      "name": "rules_body",
+      "value": "在所有空格中填入 X 或 O：\n\n1. 每一行和每一列中，X 与 O 的数量必须相同。\n\n2. 横向或纵向都不能出现三个连续相同的符号。\n\n3. 任意两行不能完全相同，任意两列也不能完全相同。\n\n深色格是题目给定的线索；点击空格会按 X → O → 空白 循环切换。"
+    },
+    {
+      "name": "got_it",
+      "value": "知道了"
+    },
+    {
+      "name": "completion_title",
+      "value": "挑战完成！"
+    },
+    {
+      "name": "return_home",
+      "value": "返回首页"
+    },
+    {
+      "name": "play_again",
+      "value": "再来一关"
+    },
+    {
+      "name": "no_record",
+      "value": "暂无记录"
+    },
+    {
+      "name": "insufficient_score",
+      "value": "积分不足"
+    },
+    {
+      "name": "hint_limit_reached",
+      "value": "本局提示/检查次数已用完（共3次）"
+    },
+    {
+      "name": "initial_message",
+      "value": "点击空格依次填入 X、O；再次点击可清空"
+    },
+    {
+      "name": "message_continue",
+      "value": "继续填写，完成后将自动结算"
+    },
+    {
+      "name": "message_reset",
+      "value": "已重置当前题目"
+    },
+    {
+      "name": "message_fixed",
+      "value": "该格是题目给定的，不能修改"
+    },
+    {
+      "name": "message_undo",
+      "value": "已撤销上一步"
+    },
+    {
+      "name": "message_hint",
+      "value": "提示：已为你填入一个正确符号"
+    },
+    {
+      "name": "message_restart",
+      "value": "已生成一道新题"
+    },
+    {
+      "name": "message_complete",
+      "value": "恭喜完成！所有行列都满足规则"
+    },
+    {
+      "name": "message_check_found",
+      "value": "发现 1 处需要调整，修正后再检查"
+    },
+    {
+      "name": "message_check_ok",
+      "value": "目前都正确，继续推理吧"
+    },
+    {
+      "name": "message_initial_tip",
+      "value": "先找出两个相同符号之间的空格"
+    },
+    {
+      "name": "theme_light_label",
+      "value": "浅色模式"
+    },
+    {
+      "name": "theme_dark_label",
+      "value": "深色模式"
+    },
+    {
+      "name": "hint_btn_text",
+      "value": "提示"
+    },
+    {
+      "name": "check_btn_text",
+      "value": "检查"
+    },
+    {
+      "name": "hint_used_up",
+      "value": "提示(已用完)"
+    },
+    {
+      "name": "check_used_up",
+      "value": "检查(已用完)"
+    }
+  ]
+}

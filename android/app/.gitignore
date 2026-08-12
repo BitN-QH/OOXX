@@ -1,0 +1,7 @@
+*.iml
+/build
+/release
+/captures
+.externalNativeBuild
+.cxx
+/test

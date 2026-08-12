@@ -1,0 +1,88 @@
+{
+  "color": [
+    {
+      "name": "start_window_background",
+      "value": "#F3F7F8"
+    },
+    {
+      "name": "page_bg",
+      "value": "#F3F7F8"
+    },
+    {
+      "name": "surface_panel",
+      "value": "#FFFFFF"
+    },
+    {
+      "name": "ink",
+      "value": "#18324B"
+    },
+    {
+      "name": "text_dim",
+      "value": "#6E7F8D"
+    },
+    {
+      "name": "border",
+      "value": "#D7E1E8"
+    },
+    {
+      "name": "teal",
+      "value": "#139B8E"
+    },
+    {
+      "name": "teal_dark",
+      "value": "#0B766E"
+    },
+    {
+      "name": "x_blue",
+      "value": "#1976D2"
+    },
+    {
+      "name": "o_coral",
+      "value": "#F06449"
+    },
+    {
+      "name": "card_header_bg",
+      "value": "#18324B"
+    },
+    {
+      "name": "badge_easy_bg",
+      "value": "#E2F5F1"
+    },
+    {
+      "name": "badge_medium_bg",
+      "value": "#E7F1FA"
+    },
+    {
+      "name": "badge_hard_bg",
+      "value": "#FDEAE5"
+    },
+    {
+      "name": "pill_status_bg",
+      "value": "#E2F5F1"
+    },
+    {
+      "name": "white",
+      "value": "#FFFFFF"
+    },
+    {
+      "name": "divider",
+      "value": "#355069"
+    },
+    {
+      "name": "invalid_bg",
+      "value": "#FEE2E2"
+    },
+    {
+      "name": "grid_line",
+      "value": "#D7E1EA"
+    },
+    {
+      "name": "grid_outer",
+      "value": "#888780"
+    },
+    {
+      "name": "board_bg",
+      "value": "#FFFFFF"
+    }
+  ]
+}
