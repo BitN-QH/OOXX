@@ -24,6 +24,7 @@
 |------|------|--------|
 | Android | [android/](android/) | Java + Material 3 |
 | HarmonyOS | [harmonyos/](harmonyos/) | ArkTS + ArkUI |
+| 微信小程序 | [wechat/](wechat/) | TypeScript + WXML/WXSS |
 
 各平台功能保持一致：随机出题、提示、自动检查、计时与积分统计、深色模式。
 

@@ -1,0 +1,103 @@
+<!--game.wxml-->
+<view class="page {{isDark ? 'dark' : 'light'}}">
+  <scroll-view class="scroll" scroll-y type="list">
+    <view class="content">
+      <!-- 顶栏 -->
+      <view class="topbar">
+        <view class="topbar-title">
+          <text class="logo">OOXX</text>
+          <text class="tagline">纯逻辑 · 圈叉谜题</text>
+        </view>
+        <view class="topbar-btn" bindtap="onShowRules" hover-class="pressed">规则</view>
+        <view class="topbar-btn coral" bindtap="doExit" hover-class="pressed">首页</view>
+      </view>
+
+      <!-- 信息栏 -->
+      <view class="infobar">
+        <view class="infobar-main">
+          <text class="infobar-level">{{levelText}}</text>
+          <view class="infobar-sub">
+            <text class="dim">已填 {{filled}} / {{total}}</text>
+            <text class="score">积分 {{totalScore}}</text>
+            <text class="dim">用时 {{timerText}}</text>
+          </view>
+        </view>
+        <view class="status {{completed ? 'done' : ''}}">{{completed ? '已完成' : '解题中'}}</view>
+      </view>
+
+      <!-- 棋盘 -->
+      <view id="board" class="board">
+        <view
+          wx:for="{{rows}}"
+          wx:for-item="row"
+          wx:key="r"
+          class="board-row"
+          style="height: {{cellH}};"
+        >
+          <view
+            wx:for="{{row.cells}}"
+            wx:for-item="cell"
+            wx:key="c"
+            class="{{cell.cls}}"
+            bindtap="onCellTap"
+            data-r="{{cell.r}}"
+            data-c="{{cell.c}}"
+          >
+            <text class="cell-text">{{cell.text}}</text>
+          </view>
+        </view>
+      </view>
+
+      <!-- 提示栏 -->
+      <view class="legend">
+        <text class="legend-x">X</text>
+        <text class="dim">点按切换</text>
+        <text class="legend-o">O</text>
+        <text class="legend-msg">{{message}}</text>
+      </view>
+
+      <!-- 按钮行 -->
+      <view class="btn-row">
+        <view class="btn primary" bindtap="doHint" hover-class="pressed">{{hintText}}</view>
+        <view class="btn primary" bindtap="doCheck" hover-class="pressed">{{checkText}}</view>
+      </view>
+      <view class="btn-row">
+        <view class="btn ghost" bindtap="doReset" hover-class="pressed">重置</view>
+        <view class="btn ghost" bindtap="doRestart" hover-class="pressed">换一题(1积分)</view>
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- 完成弹窗 -->
+  <view wx:if="{{showCompletion}}" class="mask" catchtap="noop">
+    <view class="dialog" catchtap="noop">
+      <text class="dialog-title">{{completionTitle}}</text>
+      <view class="dialog-lines">
+        <view
+          wx:for="{{completionLines}}"
+          wx:key="index"
+          class="dialog-line {{item === '' ? 'blank' : ''}}"
+        >{{item}}</view>
+      </view>
+      <view class="dialog-btns">
+        <view class="dialog-btn ghost" bindtap="onCompletionHome" hover-class="pressed">返回首页</view>
+        <view class="dialog-btn primary" bindtap="onCompletionNext" hover-class="pressed">再来一关</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 规则弹窗 -->
+  <view wx:if="{{showRules}}" class="mask" bindtap="onDialogBackdrop">
+    <view class="dialog" catchtap="noop">
+      <text class="dialog-title">游戏规则</text>
+      <view class="rules">
+        <text class="rule">在所有空格中填入 X 或 O：</text>
+        <text class="rule">1. 每一行和每一列中，X 与 O 的数量必须相同。</text>
+        <text class="rule">2. 横向或纵向都不能出现三个连续相同的符号。</text>
+        <text class="rule">3. 任意两行不能完全相同，任意两列也不能完全相同。</text>
+        <text class="rule">深色格是题目给定的线索；点击空格会按 X → O → 空白 循环切换。</text>
+      </view>
+      <view class="dialog-btn primary full" bindtap="onCloseRules" hover-class="pressed">知道了</view>
+    </view>
+  </view>
+</view>

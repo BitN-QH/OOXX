@@ -1,0 +1,432 @@
+/* game.scss — 颜色使用 SCSS 编译期变量（避免 skyline 对 CSS var() 支持不完整） */
+$themes: (
+  light: (
+    bg: #f3f7f8,
+    surface: #ffffff,
+    border: #d7e1e8,
+    ink: #18324b,
+    dim: #6e7f8d,
+    teal: #139b8e,
+    teal-dark: #0b766e,
+    coral: #f06449,
+    x: #1976d2,
+    o: #f06449,
+    cell-bg: #ffffff,
+    fixed-bg: #eaf0f3,
+    invalid-bg: #fee2e2,
+    line: #d7e1ea,
+    outer: #888780,
+    status-bg: #e2f5f1,
+    status-fg: #0b766e
+  ),
+  dark: (
+    bg: #0f172a,
+    surface: #1e293b,
+    border: #334155,
+    ink: #e2e8f0,
+    dim: #94a3b8,
+    teal: #14b8a6,
+    teal-dark: #5eeadc,
+    coral: #fb7185,
+    x: #60a5fa,
+    o: #fb7185,
+    cell-bg: #1e293b,
+    fixed-bg: #0f172a,
+    invalid-bg: #3f1d1d,
+    line: #334155,
+    outer: #64748b,
+    status-bg: #134e4a,
+    status-fg: #5eeadc
+  )
+);
+
+/* ============ 布局（不随主题） ============ */
+page {
+  height: 100%;
+}
+
+.page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.scroll {
+  flex: 1;
+  height: 0;
+}
+
+.content {
+  padding: 24rpx 36rpx 32rpx;
+  box-sizing: border-box;
+}
+
+.topbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.topbar-title {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  font-size: 48rpx;
+  font-weight: bold;
+}
+
+.tagline {
+  margin-top: 4rpx;
+  font-size: 24rpx;
+}
+
+.topbar-btn {
+  height: 72rpx;
+  padding: 0 30rpx;
+  border-radius: 24rpx;
+  border: 2rpx solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26rpx;
+}
+
+.topbar-btn.coral {
+  margin-left: 12rpx;
+}
+
+.infobar {
+  margin-top: 28rpx;
+  height: 104rpx;
+  border-radius: 28rpx;
+  border: 2rpx solid;
+  padding: 0 28rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.infobar-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.infobar-level {
+  font-size: 28rpx;
+  font-weight: bold;
+}
+
+.infobar-sub {
+  margin-top: 6rpx;
+  display: flex;
+  flex-direction: row;
+  font-size: 22rpx;
+}
+
+.infobar-sub .score {
+  margin-left: 20rpx;
+  font-weight: bold;
+}
+
+.infobar-sub .dim {
+  margin-left: 20rpx;
+}
+
+.status {
+  height: 60rpx;
+  padding: 0 24rpx;
+  border-radius: 999rpx;
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.board {
+  margin-top: 24rpx;
+  width: 100%;
+  border: 3rpx solid;
+  border-radius: 6rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.board-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.cell {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border-right: 1rpx solid transparent;
+  border-bottom: 1rpx solid transparent;
+}
+
+.cell-text {
+  font-size: 34rpx;
+  font-weight: bold;
+}
+
+.legend {
+  margin-top: 20rpx;
+  height: 84rpx;
+  border-radius: 28rpx;
+  border: 2rpx solid;
+  padding: 0 24rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.legend-x {
+  font-size: 34rpx;
+  font-weight: bold;
+}
+
+.legend-o {
+  font-size: 34rpx;
+  font-weight: bold;
+  margin-left: 20rpx;
+}
+
+.legend .dim {
+  margin-left: 8rpx;
+  font-size: 22rpx;
+}
+
+.legend-msg {
+  flex: 1;
+  margin-left: 20rpx;
+  font-size: 22rpx;
+  text-align: right;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.btn-row {
+  margin-top: 20rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.btn {
+  flex: 1;
+  height: 92rpx;
+  border-radius: 24rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+  box-sizing: border-box;
+}
+
+.btn + .btn {
+  margin-left: 14rpx;
+}
+
+.btn.primary {
+  color: #ffffff;
+}
+
+.btn.ghost {
+  border: 2rpx solid;
+}
+
+.pressed {
+  opacity: 0.7;
+}
+
+.mask {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.dialog {
+  width: 82%;
+  border-radius: 36rpx;
+  padding: 44rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.dialog-title {
+  font-size: 40rpx;
+  font-weight: bold;
+  margin-bottom: 30rpx;
+}
+
+.dialog-lines {
+  display: flex;
+  flex-direction: column;
+}
+
+.dialog-line {
+  font-size: 28rpx;
+  line-height: 44rpx;
+}
+
+.dialog-line.blank {
+  height: 24rpx;
+}
+
+.rules {
+  display: flex;
+  flex-direction: column;
+}
+
+.rule {
+  font-size: 28rpx;
+  line-height: 48rpx;
+  margin-bottom: 16rpx;
+}
+
+.dialog-btns {
+  margin-top: 40rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.dialog-btn {
+  flex: 1;
+  height: 88rpx;
+  border-radius: 24rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+}
+
+.dialog-btn + .dialog-btn {
+  margin-left: 20rpx;
+}
+
+.dialog-btn.primary {
+  color: #ffffff;
+}
+
+.dialog-btn.ghost {
+  border: 2rpx solid;
+}
+
+.dialog-btn.full {
+  margin-top: 20rpx;
+  width: 100%;
+}
+
+/* ============ 主题颜色 ============ */
+@each $name, $c in $themes {
+  .page.#{$name} {
+    background: map-get($c, bg);
+  }
+  .page.#{$name} .dim {
+    color: map-get($c, dim);
+  }
+  .page.#{$name} .logo {
+    color: map-get($c, ink);
+  }
+  .page.#{$name} .tagline {
+    color: map-get($c, dim);
+  }
+  .page.#{$name} .topbar-btn {
+    border-color: map-get($c, border);
+    color: map-get($c, ink);
+  }
+  .page.#{$name} .topbar-btn.coral {
+    border-color: map-get($c, coral);
+    color: map-get($c, coral);
+  }
+  .page.#{$name} .infobar {
+    background: map-get($c, surface);
+    border-color: map-get($c, border);
+  }
+  .page.#{$name} .infobar-level {
+    color: map-get($c, ink);
+  }
+  .page.#{$name} .infobar-sub .score {
+    color: map-get($c, teal-dark);
+  }
+  .page.#{$name} .status {
+    color: map-get($c, status-fg);
+    background: map-get($c, status-bg);
+  }
+  .page.#{$name} .board {
+    border-color: map-get($c, outer);
+    background: map-get($c, cell-bg);
+  }
+  .page.#{$name} .cell {
+    border-right-color: map-get($c, line);
+    border-bottom-color: map-get($c, line);
+    background: map-get($c, cell-bg);
+  }
+  .page.#{$name} .cell.fixed {
+    background: map-get($c, fixed-bg);
+  }
+  .page.#{$name} .cell.invalid {
+    background: map-get($c, invalid-bg);
+  }
+  .page.#{$name} .cell.x .cell-text {
+    color: map-get($c, x);
+  }
+  .page.#{$name} .cell.o .cell-text {
+    color: map-get($c, o);
+  }
+  .page.#{$name} .legend {
+    background: map-get($c, surface);
+    border-color: map-get($c, border);
+  }
+  .page.#{$name} .legend-x {
+    color: map-get($c, x);
+  }
+  .page.#{$name} .legend-o {
+    color: map-get($c, o);
+  }
+  .page.#{$name} .legend-msg {
+    color: map-get($c, ink);
+  }
+  .page.#{$name} .btn.primary {
+    background: map-get($c, teal);
+  }
+  .page.#{$name} .btn.ghost {
+    border-color: map-get($c, border);
+    color: map-get($c, ink);
+  }
+  .page.#{$name} .dialog {
+    background: map-get($c, surface);
+  }
+  .page.#{$name} .dialog-title {
+    color: map-get($c, ink);
+  }
+  .page.#{$name} .dialog-line,
+  .page.#{$name} .rule {
+    color: map-get($c, dim);
+  }
+  .page.#{$name} .dialog-btn.primary {
+    background: map-get($c, teal);
+  }
+  .page.#{$name} .dialog-btn.ghost {
+    border-color: map-get($c, border);
+    color: map-get($c, dim);
+  }
+}

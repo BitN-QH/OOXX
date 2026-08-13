@@ -1,0 +1,54 @@
+<!--index.wxml-->
+<view class="page" style="background: {{c.bg}};">
+  <scroll-view class="scroll" scroll-y type="list">
+    <view class="content">
+      <!-- 头部卡片 -->
+      <view class="header" style="background: {{c.headerBg}};">
+        <view class="header-row">
+          <text class="logo">OOXX</text>
+          <view class="icon-x"><text class="icon-text">X</text></view>
+          <view class="icon-o"><text class="icon-text">O</text></view>
+        </view>
+        <text class="tagline" style="color: {{c.headerDim}};">纯逻辑 · 圈叉谜题</text>
+        <view class="divider"></view>
+        <view class="score-row">
+          <text class="score-label" style="color: {{c.headerDim}};">可用积分</text>
+          <text class="score-value">{{totalScore}}</text>
+        </view>
+      </view>
+
+      <!-- 难度标题 -->
+      <view class="section">
+        <text class="section-main" style="color: {{c.ink}};">选择游戏难度</text>
+        <text class="section-sub" style="color: {{c.dim}};">选择适合你的棋盘尺寸，每次都会生成不同题目</text>
+      </view>
+
+      <!-- 难度卡片 -->
+      <view
+        wx:for="{{cards}}"
+        wx:key="key"
+        class="card"
+        style="background: {{c.surface}}; border-color: {{item.border}};"
+        bindtap="onStartGame"
+        data-level="{{item.level}}"
+        hover-class="card-hover"
+      >
+        <view class="badge" style="background: {{item.badgeBg}}; color: {{item.accent}};">
+          <text>{{item.badge}}</text>
+        </view>
+        <view class="card-body">
+          <text class="card-title" style="color: {{c.ink}};">{{item.title}}</text>
+          <text class="card-desc" style="color: {{c.dim}};">{{item.desc}}</text>
+          <text class="card-best" style="color: {{item.accent}};">{{item.bestText}}  ·  已完成 {{item.completed}} 局</text>
+        </view>
+        <text class="reward" style="color: {{item.accent}};">{{item.reward}}</text>
+      </view>
+
+      <text class="footnote" style="color: {{c.dim}};">完成题目即可获得积分 · 难度越高积分越多</text>
+
+      <view class="theme-btn" style="border-color: {{c.border}};" bindtap="onThemeToggle" hover-class="theme-hover">
+        <text style="color: {{c.ink}};">{{isDark ? '浅色模式' : '深色模式'}}</text>
+      </view>
+    </view>
+  </scroll-view>
+</view>

@@ -1,0 +1,17 @@
+# 依赖
+node_modules/
+miniprogram_npm/
+
+# 个人/私有配置（含真实 appid，勿提交）
+project.private.config.json
+
+# 开发者工具本地缓存
+.wx/
+.idea/
+.vscode/
+*.local
+
+# 日志与系统文件
+*.log
+.DS_Store
+Thumbs.db
